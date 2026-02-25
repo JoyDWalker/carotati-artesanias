@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - CaroTati</title>
     <link rel="stylesheet" href="../style.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Estilos adicionales para la página de productos */
         * {
@@ -127,7 +129,7 @@
             opacity: 0.95;
         }
 
-        /* Sección de productos (tus estilos originales) */
+        /* Sección de productos */
         .products-section {
             max-width: 1200px;
             margin: 50px auto;
@@ -278,17 +280,32 @@
 
         .footer-links {
             margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9em;
+            margin: 0 5px;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .footer-links a:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
             text-decoration: underline;
+        }
+
+        .footer-links i {
+            font-size: 1.3rem;
         }
         
         @media (max-width: 768px) {
@@ -317,11 +334,16 @@
             .logo img {
                 height: 60px;
             }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER CORREGIDO CON LOGO Y MENÚ HORIZONTAL -->
+    <!-- HEADER CON LOGO Y MENÚ HORIZONTAL -->
     <header>
         <nav>
             <div class="logo">
@@ -416,15 +438,23 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer con Política de privacidad redirigiendo a contacto.html -->
     <footer>
-    <p>&copy; 2024 CaroTati - Artesanías con Alma. Todos los derechos reservados.</p>
-    <div class="footer-links">
-        <a href="https://www.facebook.com/profile.php?id=61556319550310" target="_blank">Facebook</a> | 
-        <a href="https://www.instagram.com/joyd_walker/" target="_blank">Instagram</a> | 
-        <a href="contacto.html">Política de privacidad</a>
-    </div>
-</footer>
+        <p>&copy; 2024 CaroTati - Artesanías con Alma. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="https://www.facebook.com/profile.php?id=61556319550310" target="_blank">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <span style="color: white;">|</span>
+            <a href="https://www.instagram.com/joyd_walker/" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <span style="color: white;">|</span>
+            <a href="contacto.html">
+                <i class="fas fa-shield-alt"></i> Política de privacidad
+            </a>
+        </div>
+    </footer>
 
     <script>
         function showProductDetails(productId) {
@@ -457,8 +487,4 @@
         }
     </script>
 </body>
-
 </html>
-
-
-
