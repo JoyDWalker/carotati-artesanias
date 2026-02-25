@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de productos artesanales de CaroTati">
+    <title>CaroTati Artesanías - Productos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="CaroTati">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="products.html" class="active">Productos</a></li>
+                    <li><a href="presupuesto.html">Presupuesto</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-small">
+            <div>
+                <h1>Nuestras Artesanías</h1>
+                <p>Cada pieza cuenta una historia</p>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <h2 class="section-title">Artesanías con Alma</h2>
+            <p class="section-subtitle">Selección especial de piezas únicas hechas a mano</p>
+            
+            <div class="products-grid">
+                <!-- PRODUCTO 1 Tortuga -->
+                <div class="product-card" onclick="showDetails(1)">
+                    <span class="product-badge">Nuevo</span>
+                    <img src="../images/producto1.jpg.jpeg" alt="Tortuga Luminis" class="product-image">
+                    <div class="product-info">
+                        <h3>🐢 Tortuga Luminis</h3>
+                        <p class="product-tagline">"Luz que viaja en el tiempo"</p>
+                        <p class="product-description">Portavelas artesanal único, perfecto para crear ambientes cálidos.</p>
+                        <p class="product-price">35,00 €</p>
+                        <button class="btn btn-small" onclick="event.stopPropagation(); goToBudget(1)">Consultar</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 2 Espejo-->
+                <div class="product-card" onclick="showDetails(2)">
+                    <img src="../images/producto2.jpg.jpeg" alt="Espejo Multiforma" class="product-image">
+                    <div class="product-info">
+                        <h3>🪞 Espejo Multiforma</h3>
+                        <p class="product-tagline">"Reflejos que cambian contigo"</p>
+                        <p class="product-description">Espejo decorativo de formas geométricas, pieza versátil y moderna.</p>
+                        <p class="product-price">45,00 €</p>
+                        <button class="btn btn-small" onclick="event.stopPropagation(); goToBudget(2)">Consultar</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 3 Gallina-->
+                <div class="product-card" onclick="showDetails(3)">
+                    <img src="../images/producto3.jpg.jpeg" alt="Gallina Campera" class="product-image">
+                    <div class="product-info">
+                        <h3>🐔 Gallina Campera</h3>
+                        <p class="product-tagline">"El campo hecho arte"</p>
+                        <p class="product-description">Figura de porcelana pintada a mano que captura la esencia del campo.</p>
+                        <p class="product-price">40,00 €</p>
+                        <button class="btn btn-small" onclick="event.stopPropagation(); goToBudget(3)">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="philosophy-section">
+                <h2>Hecho a mano, hecho con alma</h2>
+                <p>Cada pieza es única, con horas de dedicación y amor por el arte de la artesanía.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CaroTati</h3>
+                <p>Calle Principal, 123</p>
+                <p>Albacete</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes</h3>
+                <a href="https://www.facebook.com/profile.php?id=61556319550310" target="_blank"><i class="fab fa-facebook"></i> Facebook</a><br>
+                <a href="https://www.instagram.com/joyd_walker/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="contacto.html">Aviso legal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 CaroTati</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = {
+            1: { name: "Tortuga Luminis", desc: "Portavelas artesanal único" },
+            2: { name: "Espejo Multiforma", desc: "Espejo decorativo geométrico" },
+            3: { name: "Gallina Campera", desc: "Figura de porcelana" }
+        };
+
+        function showDetails(id) {
+            alert(`📦 ${products[id].name}\n\n${products[id].desc}\n\nMás información en contacto@carotati.com`);
+        }
+        
+        function goToBudget(id) {
+            window.location.href = `presupuesto.html?producto=${id}`;
+        }
+    </script>
+</body>
+</html>

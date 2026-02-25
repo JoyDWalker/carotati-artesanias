@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicita presupuesto personalizado">
+    <title>CaroTati - Presupuesto</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="CaroTati">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="presupuesto.html" class="active">Presupuesto</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-small">
+            <div>
+                <h1>Solicita tu presupuesto</h1>
+                <p>Te ayudamos a crear la pieza perfecta</p>
+            </div>
+        </section>
+
+        <section class="budget-section">
+            <h2 class="section-title">Presupuesto personalizado</h2>
+            <p class="section-subtitle">Completa el formulario y te responderemos en 24h</p>
+            
+            <div class="budget-form">
+                <div class="required-note">
+                    <span>*</span> Campos obligatorios
+                </div>
+                
+                <form id="budgetForm" onsubmit="return validateForm()">
+                    <!-- NOMBRE -->
+                    <div class="form-group">
+                        <label for="name">Nombre completo <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" 
+                               placeholder="Ej: María García"
+                               pattern="[A-Za-zÁáÉéÍíÓóÚúÑñ\s]{3,50}"
+                               required>
+                        <div class="validation-message">Mínimo 3 caracteres</div>
+                    </div>
+                    
+                    <!-- EMAIL -->
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" 
+                               placeholder="ejemplo@correo.com" required>
+                    </div>
+                    
+                    <!-- TELÉFONO -->
+                    <div class="form-group">
+                        <label for="phone">Teléfono <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" 
+                               placeholder="+34 123 456 789"
+                               pattern="[0-9+\s]{9,15}" required>
+                    </div>
+                    
+                    <!-- PRODUCTOS DE INTERÉS -->
+                    <div class="products-group">
+                        <h3>Productos de interés (opcional)</h3>
+                        
+                        <div class="product-checkbox">
+                            <input type="checkbox" id="prod1" name="product1">
+                            <label for="prod1">
+                                <span class="product-emoji">🐢</span>
+                                Tortuga Luminis
+                                <span class="product-price">35€</span>
+                            </label>
+                        </div>
+                        
+                        <div class="product-checkbox">
+                            <input type="checkbox" id="prod2" name="product2">
+                            <label for="prod2">
+                                <span class="product-emoji">🪞</span>
+                                Espejo Multiforma
+                                <span class="product-price">45€</span>
+                            </label>
+                        </div>
+                        
+                        <div class="product-checkbox">
+                            <input type="checkbox" id="prod3" name="product3">
+                            <label for="prod3">
+                                <span class="product-emoji">🐔</span>
+                                Gallina Campera
+                                <span class="product-price">40€</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- INFORMACIÓN ADICIONAL (TEXTAREA) -->
+                    <div class="form-group">
+                        <label for="info">Solicite más información <span class="required">*</span></label>
+                        <textarea id="info" name="info" 
+                                  placeholder="Cuéntanos qué tipo de pieza te gustaría, colores, tamaño, personalizaciones..."
+                                  minlength="10"
+                                  maxlength="500"
+                                  required></textarea>
+                        <div class="validation-message">Mínimo 10 caracteres</div>
+                    </div>
+                    
+                    <!-- CHECKBOX PRIVACIDAD -->
+                    <div class="privacy-group">
+                        <label>
+                            <input type="checkbox" id="privacy" required>
+                            He leído y acepto la 
+                            <a href="#" class="privacy-link" onclick="showPrivacy(event)">Política de privacidad</a>
+                            <span class="required">*</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Solicitar presupuesto</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CaroTati</h3>
+                <p>Calle Principal, 123</p>
+                <p>Albacete</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes</h3>
+                <a href="https://www.facebook.com/profile.php?id=61556319550310" target="_blank">Facebook</a><br>
+                <a href="https://www.instagram.com/joyd_walker/" target="_blank">Instagram</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="contacto.html">Aviso legal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 CaroTati</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPrivacy(e) {
+            e.preventDefault();
+            alert("Política de privacidad: Sus datos serán tratados con confidencialidad.");
+        }
+        
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const info = document.getElementById('info').value.trim();
+            const privacy = document.getElementById('privacy').checked;
+            
+            if (!name || !email || !phone || !info) {
+                alert('❌ Complete todos los campos obligatorios');
+                return false;
+            }
+            
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('❌ Email no válido');
+                return false;
+            }
+            
+            if (phone.replace(/[^0-9]/g, '').length < 9) {
+                alert('❌ Teléfono debe tener al menos 9 dígitos');
+                return false;
+            }
+            
+            if (info.length < 10) {
+                alert('❌ La información debe tener al menos 10 caracteres');
+                return false;
+            }
+            
+            if (!privacy) {
+                alert('❌ Debe aceptar la política de privacidad');
+                return false;
+            }
+            
+            // Productos seleccionados
+            const selected = [];
+            if (document.getElementById('prod1').checked) selected.push('Tortuga');
+            if (document.getElementById('prod2').checked) selected.push('Espejo');
+            if (document.getElementById('prod3').checked) selected.push('Gallina');
+            
+            alert('✅ Solicitud enviada. Te contactaremos en 24-48h.');
+            return false; // Previene envío real
+        }
+        
+        // Precargar producto desde URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const prod = params.get('producto');
+            if (prod) {
+                const cb = document.getElementById(`prod${prod}`);
+                if (cb) cb.checked = true;
+            }
+        });
+    </script>
+</body>
+</html>

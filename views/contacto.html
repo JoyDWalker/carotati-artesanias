@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con CaroTati">
+    <title>CaroTati - Contacto</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="CaroTati">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="presupuesto.html">Presupuesto</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-small">
+            <div>
+                <h1>Contacta con nosotros</h1>
+                <p>Estamos aquí para ayudarte</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">¿Tienes alguna pregunta? Escríbenos</p>
+            
+            <div class="contact-container">
+                <!-- FORMULARIO -->
+                <div class="contact-form">
+                    <h3 style="color: var(--dorado); margin-bottom: 2rem;">Envíanos un mensaje</h3>
+                    
+                    <form id="contactForm" onsubmit="return validateContact()">
+                        <div class="form-group">
+                            <label for="name">Nombre completo <span class="required">*</span></label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje <span class="required">*</span></label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="privacy-group">
+                            <label>
+                                <input type="checkbox" id="privacy" required>
+                                Acepto la <a href="#" class="privacy-link" onclick="showPrivacy(event)">Política de privacidad</a> *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Enviar mensaje</button>
+                    </form>
+                </div>
+                
+                <!-- INFORMACIÓN Y MAPA -->
+                <div class="contact-info">
+                    <h3 style="color: var(--dorado); margin-bottom: 2rem;">Información de contacto</h3>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61556319550310" target="_blank" class="social-link facebook">
+                            📘 Facebook
+                        </a>
+                        <a href="https://www.instagram.com/joyd_walker/" target="_blank" class="social-link instagram">
+                            📷 Instagram
+                        </a>
+                    </div>
+                    
+                    <div class="map-container">
+                        <a href="https://www.google.com/maps" target="_blank">
+                            <img src="../images/localizacion.jpg" alt="Mapa ubicación">
+                        </a>
+                        <p class="map-caption">📍 Haz clic para ver en Google Maps</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">📧</span>
+                        <div class="info-text">
+                            <strong>Email</strong>
+                            <a href="mailto:joyd.walker2@gmail.com">joyd.walker2@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div class="info-text">
+                            <strong>Teléfono</strong>
+                            <a href="tel:+34607553190">607 55 31 90</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">🏠</span>
+                        <div class="info-text">
+                            <strong>Dirección</strong>
+                            Calle Principal, 123, Albacete
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">⏰</span>
+                        <div class="info-text">
+                            <strong>Horario</strong>
+                            L-V: 10:00-20:00, S: 10:00-14:00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CaroTati</h3>
+                <p>Calle Principal, 123</p>
+                <p>Albacete</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes</h3>
+                <a href="https://www.facebook.com/profile.php?id=61556319550310" target="_blank">Facebook</a><br>
+                <a href="https://www.instagram.com/joyd_walker/" target="_blank">Instagram</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Aviso legal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 CaroTati</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPrivacy(e) {
+            e.preventDefault();
+            alert("Política de privacidad: CaroTati Artesanías trata tus datos personales (nombre, email, teléfono) para gestionar tus consultas, elaborar presupuestos y tramitar pedidos. La base legal es tu consentimiento marcando esta casilla. No cederemos tus datos a terceros salvo obligación legal. Puedes ejercer tus derechos de acceso, rectificación, supresión y otros contactando en joyd.walker2@gmail.com o llamando al 607 553 190. Conservaremos tus datos durante el tiempo necesario para atender tu solicitud o mientras dure la relación comercial. Al marcar esta casilla confirmas que has leído y aceptas nuestra Política de Privacidad completa..");
+        }
+        
+        function validateContact() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const privacy = document.getElementById('privacy').checked;
+            
+            if (!name || !email || !message) {
+                alert('❌ Complete los campos obligatorios');
+                return false;
+            }
+            
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('❌ Email no válido');
+                return false;
+            }
+            
+            if (!privacy) {
+                alert('❌ Acepte la política de privacidad');
+                return false;
+            }
+            
+            alert('✅ Mensaje enviado. Gracias por contactarnos.');
+            return false;
+        }
+    </script>
+</body>
+</html>
