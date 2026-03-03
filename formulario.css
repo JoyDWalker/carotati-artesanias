@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 30px;
+}
+
+.contenedor {
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+p {
+    color: #666666;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* cada campo del formulario */
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333333;
+    font-size: 0.95rem;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* campo vacío o con error */
+.campo input:invalid,
+.campo textarea:invalid {
+    border-color: #e74c3c;
+}
+
+/* campo con dato válido */
+.campo input:valid,
+.campo textarea:valid {
+    border-color: #2ecc71;
+}
+
+/* mientras no se ha tocado el campo no mostramos error */
+.campo input:not(:focus):placeholder-shown,
+.campo textarea:not(:focus):placeholder-shown {
+    border-color: #cccccc;
+}
+
+/* focus */
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* checkbox de privacidad */
+.campo-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+.campo-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.campo-checkbox label {
+    font-size: 0.9rem;
+    color: #444444;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.campo-checkbox label a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.campo-checkbox label a:hover {
+    text-decoration: underline;
+}
+
+/* botón enviar */
+button[type="submit"] {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}

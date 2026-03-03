@@ -795,6 +795,44 @@ footer {
     width: 100%;
 }
 
+/* ===== 14. PÁGINA DE PRIVACIDAD ===== */
+.privacidad-section {
+    padding: 4rem 0;
+}
+
+.privacidad-section h2 {
+    color: var(--dorado-oscuro);
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.privacidad-section p {
+    color: var(--gris-texto);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.privacidad-section ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+    color: var(--gris-texto);
+    line-height: 1.8;
+}
+
+.privacidad-section a {
+    color: var(--dorado);
+    text-decoration: none;
+}
+
+.privacidad-section a:hover {
+    text-decoration: underline;
+}
+
+.privacidad-volver {
+    margin-top: 3rem;
+    text-align: center;
+}
+
 @media (max-width: 480px) {
     .section-title {
         font-size: 2rem;
