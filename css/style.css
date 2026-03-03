@@ -833,6 +833,76 @@ footer {
     text-align: center;
 }
 
+/* ===== 15. POPUP POLÍTICA DE PRIVACIDAD ===== */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-overlay:target {
+    display: flex;
+}
+
+.popup-caja {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 2.5rem;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: var(--sombra-fuerte);
+}
+
+.popup-caja h2 {
+    color: var(--dorado);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.popup-caja p {
+    color: var(--gris-texto);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.popup-caja ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.popup-caja ul li {
+    color: var(--gris-texto);
+    margin-bottom: 0.5rem;
+}
+
+.popup-caja ul a {
+    color: var(--dorado);
+    text-decoration: none;
+}
+
+.popup-caja ul a:hover {
+    text-decoration: underline;
+}
+
+.popup-cerrar {
+    display: inline-block;
+    background: var(--dorado);
+    color: var(--blanco);
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.popup-cerrar:hover {
+    background: var(--dorado-oscuro);
+}
+
 @media (max-width: 480px) {
     .section-title {
         font-size: 2rem;
