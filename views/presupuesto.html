@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Galería de productos artesanales de CaroTati">
-    <title>CaroTati Artesanías - Productos</title>
+    <meta name="description" content="Solicita un presupuesto personalizado en CaroTati Artesanías">
+    <title>CaroTati Artesanías - Presupuesto</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -13,15 +13,15 @@
         <div class="header-container">
             <div class="logo">
                 <a href="../index.html">
-                    <img src="../images/logo.png" alt="CaroTati">
+                    <img src="../images/logo.png" alt="CaroTati - Artesanías con Alma" title="CaroTati">
                     <span class="logo-text">CaroTati Artesanías</span>
                 </a>
             </div>
-            <nav>
+            <nav aria-label="Navegación principal">
                 <ul class="nav-menu">
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="products.html" class="active">Productos</a></li>
-                    <li><a href="presupuesto.html">Presupuesto</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="presupuesto.html" class="active">Presupuesto</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
@@ -31,57 +31,101 @@
     <main>
         <section class="hero-small">
             <div>
-                <h1>Nuestras Artesanías</h1>
-                <p>Cada pieza cuenta una historia</p>
+                <h1>Solicitar Presupuesto</h1>
+                <p>Cuéntanos qué necesitas y te respondemos en 24 horas</p>
             </div>
         </section>
 
-        <section class="products-section">
-            <h2 class="section-title">Artesanías con Alma</h2>
-            <p class="section-subtitle">Selección especial de piezas únicas hechas a mano</p>
-            
-            <div class="products-grid">
-                <!-- PRODUCTO 1 -->
-                <div class="product-card">
-                    <span class="product-badge">Nuevo</span>
-                    <img src="../images/producto1.jpg.jpeg" alt="Tortuga Luminis" class="product-image">
-                    <div class="product-info">
-                        <h3>🐢 Tortuga Luminis</h3>
-                        <p class="product-tagline">"Luz que viaja en el tiempo"</p>
-                        <p class="product-description">Portavelas artesanal único, perfecto para crear ambientes cálidos.</p>
-                        <p class="product-price">35,00 €</p>
-                        <a href="presupuesto.html?producto=1" class="btn btn-small">Consultar</a>
-                    </div>
-                </div>
+        <section class="budget-section">
+            <h2 class="section-title">Formulario de Presupuesto</h2>
+            <p class="section-subtitle">Rellena el formulario y recibirás tu presupuesto personalizado sin compromiso</p>
 
-                <!-- PRODUCTO 2 -->
-                <div class="product-card">
-                    <img src="../images/producto2.jpg.jpeg" alt="Espejo Multiforma" class="product-image">
-                    <div class="product-info">
-                        <h3>🪞 Espejo Multiforma</h3>
-                        <p class="product-tagline">"Reflejos que cambian contigo"</p>
-                        <p class="product-description">Espejo decorativo de formas geométricas, pieza versátil y moderna.</p>
-                        <p class="product-price">45,00 €</p>
-                        <a href="presupuesto.html?producto=2" class="btn btn-small">Consultar</a>
-                    </div>
-                </div>
+            <div class="budget-form">
+                <form action="#" method="post">
+                    <p class="required-note">Los campos marcados con <span>*</span> son obligatorios</p>
 
-                <!-- PRODUCTO 3 -->
-                <div class="product-card">
-                    <img src="../images/producto3.jpg.jpeg" alt="Gallina Campera" class="product-image">
-                    <div class="product-info">
-                        <h3>🐔 Gallina Campera</h3>
-                        <p class="product-tagline">"El campo hecho arte"</p>
-                        <p class="product-description">Figura de porcelana pintada a mano que captura la esencia del campo.</p>
-                        <p class="product-price">40,00 €</p>
-                        <a href="presupuesto.html?producto=3" class="btn btn-small">Consultar</a>
+                    <!-- DATOS PERSONALES -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo <span class="required">*</span></label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellidos" required>
+                        <span class="validation-message">Introduce tu nombre completo</span>
                     </div>
-                </div>
-            </div>
 
-            <div class="philosophy-section">
-                <h2>Hecho a mano, hecho con alma</h2>
-                <p>Cada pieza es única, con horas de dedicación y amor por el arte de la artesanía.</p>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                        <span class="validation-message">Introduce un email válido</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono de contacto</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="600 000 000">
+                    </div>
+
+                    <!-- SELECCIÓN DE PRODUCTOS -->
+                    <div class="products-group">
+                        <h3>Productos de interés <span class="required">*</span></h3>
+
+                        <div class="product-checkbox">
+                            <input type="checkbox" id="prod1" name="productos" value="tortuga-luminis">
+                            <label for="prod1">
+                                <span class="product-emoji">🐢</span>
+                                <span>Tortuga Luminis – Portavelas artesanal</span>
+                                <span class="product-price">35,00 €</span>
+                            </label>
+                        </div>
+
+                        <div class="product-checkbox">
+                            <input type="checkbox" id="prod2" name="productos" value="espejo-multiforma">
+                            <label for="prod2">
+                                <span class="product-emoji">🪞</span>
+                                <span>Espejo Multiforma – Espejo decorativo geométrico</span>
+                                <span class="product-price">45,00 €</span>
+                            </label>
+                        </div>
+
+                        <div class="product-checkbox">
+                            <input type="checkbox" id="prod3" name="productos" value="gallina-campera">
+                            <label for="prod3">
+                                <span class="product-emoji">🐔</span>
+                                <span>Gallina Campera – Figura de porcelana pintada a mano</span>
+                                <span class="product-price">40,00 €</span>
+                            </label>
+                        </div>
+
+                        <div class="product-checkbox">
+                            <input type="checkbox" id="prod4" name="productos" value="personalizado">
+                            <label for="prod4">
+                                <span class="product-emoji">🛠️</span>
+                                <span>Pieza personalizada (especificar en el mensaje)</span>
+                                <span class="product-price">A consultar</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- CANTIDAD -->
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad aproximada</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="100" placeholder="1">
+                    </div>
+
+                    <!-- MENSAJE -->
+                    <div class="form-group">
+                        <label for="mensaje">Detalles adicionales <span class="required">*</span></label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos más sobre lo que necesitas: dimensiones, colores, ocasión especial..." required></textarea>
+                        <span class="validation-message">Por favor, describe lo que necesitas</span>
+                    </div>
+
+                    <!-- PRIVACIDAD -->
+                    <div class="privacy-group">
+                        <label>
+                            <input type="checkbox" id="privacidad" name="privacidad" required>
+                            Acepto la <a href="contacto.html" class="privacy-link">Política de privacidad</a> *
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-full">Solicitar presupuesto</button>
+                </form>
             </div>
         </section>
     </main>
@@ -89,24 +133,39 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>CaroTati</h3>
+                <h3>CaroTati Artesanías</h3>
                 <p>Calle Principal, 123</p>
-                <p>Albacete</p>
+                <p>Albacete 02001, España</p>
+                <p>📞 <a href="tel:+34607553190">607 55 31 90</a></p>
+                <p>📧 <a href="mailto:joyd.walker2@gmail.com">joyd.walker2@gmail.com</a></p>
             </div>
             <div class="footer-section">
-                <h3>Redes</h3>
-                <a href="https://www.facebook.com/profile.php?id=61556319550310" target="_blank"><i class="fab fa-facebook"></i> Facebook</a><br>
-                <a href="https://www.instagram.com/joyd_walker/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <h3>Horario</h3>
+                <p>Lunes a Viernes: 10:00 - 20:00</p>
+                <p>Sábados: 10:00 - 14:00</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <a href="https://www.facebook.com/profile.php?id=61556319550310" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a><br>
+                <a href="https://www.instagram.com/joyd_walker/" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
             </div>
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul class="footer-links">
+                    <li><a href="contacto.html">Política de privacidad</a></li>
                     <li><a href="contacto.html">Aviso legal</a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2026 CaroTati</p>
+            <p>&copy; 2026 CaroTati Artesanías –
+                <a href="mailto:joyd.walker2@gmail.com">joyd.walker2@gmail.com</a>
+            </p>
         </div>
     </footer>
 </body>

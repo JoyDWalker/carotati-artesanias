@@ -785,6 +785,16 @@ footer {
     }
 }
 
+/* ===== 13. CLASES DE UTILIDAD ===== */
+.form-heading {
+    color: var(--dorado);
+    margin-bottom: 2rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
 @media (max-width: 480px) {
     .section-title {
         font-size: 2rem;
